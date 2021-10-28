@@ -13,7 +13,8 @@ exports.register = async (req, res, next) => {
 
         res.status(201).json({
             success: true,
-            user
+            user,
+            token: "321312ewrq23213rerg"
         });
     } catch (error) {
         next(error);
@@ -40,7 +41,7 @@ exports.login = async (req, res, next) => {
             return next(new ErrorResponse("Invalid credentials", 401));
         }
 
-        res.status(201).json({
+        res.status(200).json({
             success: true,
             user,
             token: "321312ewrq23213rerg"
